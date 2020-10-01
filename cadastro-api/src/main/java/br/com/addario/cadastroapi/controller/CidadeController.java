@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.addario.cadastroapi.model.Cliente;
-import br.com.addario.cadastroapi.services.ClienteService;
+import br.com.addario.cadastroapi.model.Cidade;
+import br.com.addario.cadastroapi.services.CidadeService;
 
 @RestController
-public class ClienteController {
+public class CidadeController {
 
 	@Autowired
-	private ClienteService service;
+	private CidadeService service;
 
-	@PostMapping("/api/clientes")
-	public void cadastraCliente(@RequestBody Cliente cliente) {
-		service.cadastraCliente(cliente);
+	@PostMapping("api/cidades")
+	public void cadastraCidade(@RequestBody Cidade cidade) {
+		service.cadastraCidade(cidade);
 	}
 
-	@GetMapping("/api/clientes")
-	public List<Cliente> consultaClientes() {
-		return service.consultaClientes();
+	@GetMapping("api/cidades")
+	public List<Cidade> consultaCidades() {
+		return service.consultaCidades();
 	}
 }

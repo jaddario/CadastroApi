@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.addario.cadastroapi.model.Cliente;
 
 public interface ClienteService {
+	
 	public void cadastraCliente(Cliente cliente);
 
 	public void removeCliente(int id);
