@@ -1,6 +1,7 @@
 package br.com.addario.cadastroapi.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,15 +21,13 @@ public class CidadeServiceImpl implements CidadeService {
 	}
 
 	@Override
-	public Cidade consultaCidadePeloNome(String nomeCidade) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Cidade> consultaCidadePeloNome(String nomeCidade) {
+		return repository.consultaCidadePeloNome(nomeCidade);
 	}
 
 	@Override
-	public Cidade consultaCidadePeloEstado(String nomeEstado) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Cidade> consultaCidadesPeloEstado(String nomeEstado) {
+		return repository.consultaCidadesPeloEstado(nomeEstado);
 	}
 
 	@Override

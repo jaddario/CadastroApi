@@ -1,6 +1,7 @@
 package br.com.addario.cadastroapi.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,14 +26,18 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void consultaClientePeloNome(String nome) {
-		// TODO Auto-generated method stub
-
+	public List<Cliente> consultaClientePeloNome(String nome) {
+		return repository.consultaClientePeloNome(nome);
 	}
 
 	@Override
-	public void alteraNomeCliente(String nome) {
-		// TODO Auto-generated method stub
+	public Optional<Cliente> consultaClientePorId(int id) {
+		return repository.findById(id);
+	}
+
+	@Override
+	public void alteraNomeCliente(int id, String novoNome) {
+		repository.updateByName(id, novoNome);
 
 	}
 
