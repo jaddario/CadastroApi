@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.addario.cadastroapi.model.Cliente;
@@ -36,8 +37,8 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public void alteraNomeCliente(int id, String novoNome) {
-		repository.updateByName(id, novoNome);
+	public Optional<Cliente> alteraNomeCliente(int id, String novoNome) {
+		return repository.updateByName(id, novoNome);
 
 	}
 
