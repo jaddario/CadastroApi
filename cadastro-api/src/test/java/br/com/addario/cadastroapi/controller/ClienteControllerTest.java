@@ -11,7 +11,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -30,7 +29,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import br.com.addario.cadastroapi.model.Cidade;
 import br.com.addario.cadastroapi.model.Cliente;
 import br.com.addario.cadastroapi.services.ClienteService;
 
@@ -53,6 +51,8 @@ class ClienteControllerTest {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date dataNascimento = dateFormat.parse("02/04/1985");
+		
+		
 		cliente = new Cliente(1, "José Addario", "masculino", dataNascimento, 35, "Belém");
 		clientes = Arrays.asList(cliente);
 	}

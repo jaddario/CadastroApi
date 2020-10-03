@@ -37,8 +37,8 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public Optional<Cliente> alteraNomeCliente(int id, String novoNome) {
-		return repository.updateByName(id, novoNome);
+	public void alteraNomeCliente(int id, String novoNome) {
+		repository.updateByName(id, novoNome);
 
 	}
 

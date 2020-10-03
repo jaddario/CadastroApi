@@ -16,8 +16,8 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
 	@Query("select c from Cliente c where c.nomeCompleto = ?1")
 	List<Cliente> consultaClientePeloNome(String nome);
-	
+
 	@Modifying
 	@Query("update Cliente c set c.nomeCompleto = :nome where c.id = :id")
-	Optional<Cliente> updateByName(@Param("id") int id, @Param("nome") String novoNome);
+	void updateByName(@Param("id") int id, @Param("nome") String novoNome);
 }

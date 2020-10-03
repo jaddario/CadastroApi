@@ -45,8 +45,8 @@ public class ClienteController {
 
 	@Transactional
 	@PutMapping(path = "/api/clientes/alteranome/{id}/{novoNome}")
-	public Optional<Cliente> alteraNomeCliente(@PathVariable int id, @PathVariable String novoNome) {
-		return service.alteraNomeCliente(id, novoNome);
+	public void alteraNomeCliente(@PathVariable int id, @PathVariable String novoNome) {
+		service.alteraNomeCliente(id, novoNome);
 	}
 	
 	@DeleteMapping(path = "/api/clientes/remove/{id}")

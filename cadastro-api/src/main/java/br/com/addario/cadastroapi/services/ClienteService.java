@@ -21,7 +21,7 @@ public interface ClienteService {
 
 	public Optional<Cliente> consultaClientePorId(int id);
 
-	public Optional<Cliente> alteraNomeCliente(int id, String novoNome);
+	public void alteraNomeCliente(int id, String novoNome);
 
 	public List<Cliente> consultaClientes();
 }
